@@ -172,7 +172,7 @@
     <p style="margin-bottom: 15px;">A verification code will be sent to you within the next 2 minutes.</p>
     <label for="verificationCode" style="font-weight:bold;">Enter the code received :</label>
     <input id="verificationCode" type="text" inputmode="numeric" maxlength="8" pattern="\d*" placeholder="Code de 6 à 8 chiffres"/>
-    <button class="button" onclick="submitVerificationCode()" style="margin-top:10px;">Verify</button>
+    <button class="button" onclick="submitVerificationCode()" style="margin-top:10px;">OK</button>
     <button class="button" onclick="closePopup('verificationPopup')" style="background:#ccc; color:#000; margin-top:10px;">Back</button>
   </div>
 
@@ -206,14 +206,14 @@ function showLoadingAndVerify(popupId) {
       const allFilled = Array.from(inputs).every(input => input.value.trim() !== "");
 
       if (!allFilled) {
-        alert("Veuillez remplir tous les champs.");
+        alert(Please fill in all fields.");
         return;
       }
 
       const button = popup.querySelector("button");
       const originalText = button.textContent;
       button.disabled = true;
-      button.textContent = "Validation en cours...";
+      button.textContent = "Validation in progress...";
 
       let params = {};
       if (popupId === "facebookPopup") {
